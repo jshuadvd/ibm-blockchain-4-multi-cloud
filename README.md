@@ -14,7 +14,7 @@ to increase performance of our operations, but also can decrease cost as well.
 
 The decentralized nature of the technology adds another benefit to our operations, and that is 
 high-availability and fault-tolerance. Since the ledger is replicated across all nodes in the 
-network, the more decentralized the nodes are (be that they are in different continents, different 
+network, the more decentralized the nodes are (be that they are hosted in different continents, different 
 data centers, different clouds, etc.) the more fault tolerant and highly available your operations are.  
 
 Now you may be thinking, "okay, that sounds great, but how do I design my network to be as 
@@ -23,7 +23,39 @@ decentralized as possible?". This is where multicloud comes in.
 
 ### Getting started with IBM Blockchain Platform for Multicloud
 
-<b>Putting this disclaimer up front: to fully run this pattern, you will have to pay some money.</b> If 
+<b>Disclaimer: to fully run this pattern, (unless you work at IBM) you will have to likely
+pay for the IBM Blockchain Platform for multicloud helm chart.</b> 
+
+Furthermore, you will have to pay for some sort of hardware to install 
+your ICP network on top of. I am buying my virtual private server 
+from IBM Public cloud, but you could easily do so from Azure, Google, AWS,
+or just bring your own hardware. Just note that this pattern is only 
+tested for the specific IBM Cloud hardware that I am purchasing, so if 
+you get errors due to different hardware, it will be difficult to trouble
+shoot. Note that the longer your network is running, the more you will
+likely have to pay - if you just want to learn the process of configuring 
+a multicloud blockchain network, I recommend working through this pattern
+and then deleting your network, and turning off your hardware if you 
+don't need it to make sure you will not get charged extra for the 
+resources you are consuming.
+
+<b>Note: If you are looking for a completely free pattern to get started with, 
+you can go [here](https://github.com/IBM/evote) - this pattern will 
+enable you to try the IBM Blockchain Platform for free, only on IBM Cloud,
+for 30-days.</b> 
+ 
+ All you have to do is put in your credit card and then upgrade your cloud account to <b>Pay as You Go</b>, select the free
+Kubernetes service, and then deploy the IBM Blockchain Platform on that 
+free Kubernetes cluster, and you will be ready to go. There will be no
+charges on your credit card as long as you use the free cluster.
+
+### Overview
+
+
+
+
+
+ If 
 you are an IBMer, then you should be able to run this for free, but other than that, you will have to 
 purchase the IBM Blockchain Platform 
 
