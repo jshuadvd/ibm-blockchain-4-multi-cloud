@@ -1,4 +1,4 @@
-# Create a fair evoting application to ensure correct election results with Hyperledger Fabric and IBM Blockchain Platform
+# Create a multicloud IBM Blockchain network 
 
 <br>
 <p align="center">
@@ -6,23 +6,38 @@
 </p>
 <br>
 
-Have you ever wondered how exactly the votes in a presidential election 
-counted? What if instead of having volunteers that are spending hours a 
-day counting votes manually, we have an app that was backed by blockchain, 
-recording each vote made by a voter, ensuring double-voting is not possible?
-That's what this code pattern explains how to do. We aim to build a web-app
-in which the voter can register with their drivers license, get a unique 
-voterId which is used to login to the app, and cast the vote. The vote is 
-tallied on the blockchain, and the web-app shows the current standings of the
-polls. 
+One of the aspects that makes blockchain technology so attractive to developers is the
+decentralized nature of the technology - blockchain enables us to bypass middlemen and transact directly
+with the network participants in a peer-to-peer manner. Bypassing middlemen enables us to not only 
+to increase performance of our operations, but also can decrease cost as well.
 
-### Voting using Public Key Infrastructure
-At the start of the application, the user registers to vote by providing their drivers license number,
-registrar district, and first and last name. In this step, we can check to see if the drivers license 
-is valid, and has not been registered previously. If all goes well, we create a private and public key 
-for the voter with our certificate authority that is running on the cloud, and add those keys to the 
-wallet. To read more about public key infrastructure, and how Hyperledger Fabric implements identity
-using this technology, go [here](https://hyperledger-fabric.readthedocs.io/en/release-1.4/identity/identity.html).
+The decentralized nature of the technology adds another benefit to our operations, and that is 
+high-availability and fault-tolerance. Since the ledger is replicated across all nodes in the 
+network, the more decentralized the nodes are (be that they are in different continents, different 
+data centers, different clouds, etc.) the more fault tolerant and highly available your operations are.  
+
+Now you may be thinking, "okay, that sounds great, but how do I design my network to be as 
+decentralized as possible?". This is where multicloud comes in. 
+
+
+### Getting started with IBM Blockchain Platform for Multicloud
+
+<b>Putting this disclaimer up front: to fully run this pattern, you will have to pay some money.</b>
+
+The IBM Blockchain Platform - which leverages the open-source Hyperledger Fabric project to rapidly build 
+and scale blockchain networks - can be deployed accross public and private clouds, your own data center, 
+and third-party public clouds (such as AWS). The deployment is available through <b>IBM Cloud Private</b>
+IBM's Kubernetes based platform for container orchestration. This means that you can either take your own 
+server, a virtual server running on AWS, or a virtual server running on IBM Cloud (what we will show you 
+now), install IBM Cloud Private on the server, and then start running the IBM Blockchain Platform on the 
+hardware of your choice, in the location of your choice! Hopefully this gets you somewhat excited, so let's 
+get started! 
+
+### Getting your hardware
+
+First thing's first. We need a server to run our Kubernetes platform on top of..so let's go ahead and 
+make use of IBM's public cloud. 
+
 
 After that, we use our drivers license number to submit our vote, during which the application checks 
 if this drivers license number has voted before and tells the user they have already submitted a vote 
@@ -55,17 +70,11 @@ Hyperledger Fabric nodes.
 
 # Flow Description
 1. The blockchain operator sets up the IBM Blockchain Platform 2.0 service.
-2. The IBM Blockchain Platform 2.0 creates a Hyperledger Fabric network on an IBM Kubernetes 
-Service, and the operator installs and instantiates the smart contract on the network.
-3. The Node.js application server uses the Fabric SDK to interact with the deployed network on IBM Blockchain Platform 2.0 and creates APIs for a web client.
-4. The Vue.js client uses the Node.js application API to interact with the network.
-5. The user interacts with the Vue.js web interface to cast their ballot and
-and query the world state to see current poll standings.
+
 
 # Included components
 *	[IBM Blockchain Platform](https://console.bluemix.net/docs/services/blockchain/howto/ibp-v2-deploy-iks.html#ibp-v2-deploy-iks) gives you total control of your blockchain network with a user interface that can simplify and accelerate your journey to deploy and manage blockchain components on the IBM Cloud Kubernetes Service.
-*	[IBM Cloud Kubernetes Service](https://www.ibm.com/cloud/container-service) creates a cluster of compute hosts and deploys highly available containers. A Kubernetes cluster lets you securely manage the resources that you need to quickly deploy, update, and scale applications.
-* [IBM Blockchain Platform Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=IBMBlockchain.ibm-blockchain-platform) is designed to assist users in developing, testing, and deploying smart contracts -- including connecting to Hyperledger Fabric environments.
+*	[IBM Cloud Private](https://www.ibm.com/cloud/container-service) creates a cluster of compute hosts and deploys highly available containers. A Kubernetes cluster lets you securely manage the resources that you need to quickly deploy, update, and scale applications.
 
 ## Featured technologies
 + [Hyperledger Fabric v1.4](https://hyperledger-fabric.readthedocs.io) is a platform for distributed ledger solutions, underpinned by a modular architecture that delivers high degrees of confidentiality, resiliency, flexibility, and scalability.
