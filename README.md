@@ -6,6 +6,7 @@
 </p>
 <br>
 
+
 One of the aspects that makes blockchain technology so attractive to developers is the
 decentralized nature of the technology - blockchain enables us to bypass middlemen and transact directly
 with the network participants in a peer-to-peer manner. Bypassing middlemen enables us to not only 
@@ -22,7 +23,9 @@ decentralized as possible?". This is where multicloud comes in.
 
 ### Getting started with IBM Blockchain Platform for Multicloud
 
-<b>Putting this disclaimer up front: to fully run this pattern, you will have to pay some money.</b>
+<b>Putting this disclaimer up front: to fully run this pattern, you will have to pay some money.</b> If 
+you are an IBMer, then you should be able to run this for free, but other than that, you will have to 
+purchase the IBM Blockchain Platform 
 
 The IBM Blockchain Platform - which leverages the open-source Hyperledger Fabric project to rapidly build 
 and scale blockchain networks - can be deployed accross public and private clouds, your own data center, 
